@@ -84,9 +84,9 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings?name=about_us`).then(response => {
-        this.terms_title = response.data.data.name;
-        this.terms_content = response.data.data.value;
+      return await this.$axios.get(`settings?key=about_us`).then(response => {
+        this.terms_title = response.data.data[0].name;
+        this.terms_content = response.data.data[0].value;
       console.log(response.data)
         console.log()
       }).catch(error => {

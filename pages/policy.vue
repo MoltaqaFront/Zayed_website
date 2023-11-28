@@ -64,10 +64,10 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings?name=policy`).then(response => {
+      return await this.$axios.get(`settings?key=policy`).then(response => {
         this.isLoading=true;
-        this.terms_title = response.data.data.name;
-        this.terms_content = response.data.data.value;
+        this.terms_title = response.data.data[0].name;
+        this.terms_content = response.data.data[0].value;
         // console.log(response.data.body.homepage.privacy_policy.title)
       }).catch(error => {
         console.log(error)
