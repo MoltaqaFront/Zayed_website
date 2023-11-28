@@ -84,13 +84,13 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`api/apoutApplication`).then(response => {
-        this.terms_title = response.data.data.title;
-        this.terms_content = response.data.data.content;
+      return await this.$axios.get(`settings?name=about_us`).then(response => {
+        this.terms_title = response.data.data.name;
+        this.terms_content = response.data.data.value;
       console.log(response.data)
         console.log()
       }).catch(error => {
-        console.log(error)  
+        console.log(error)
       })
     } catch (error) {
       console.log("catch : " + error)
