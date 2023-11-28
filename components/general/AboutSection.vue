@@ -84,7 +84,7 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings?key=about_us`).then(response => {
+      return await this.$axios.get(`settings-general?key=about_us`).then(response => {
         this.terms_title = response.data.data[0].name;
         this.terms_content = response.data.data[0].value;
       console.log(response.data)
@@ -122,13 +122,13 @@ export default {
 
   .section_subtitle {
     margin-block: 20px 0;
-    color: var(--main_theme_clr);
+    color: black;
     font-size: 30px;
   }
 
   .section_title {
     margin-block: 25px;
-    color: var(--main_theme_clr);
+    color: black;
     font-weight: 800;
     font-size: 40px;
     width: 70%;

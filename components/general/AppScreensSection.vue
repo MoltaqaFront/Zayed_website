@@ -39,7 +39,7 @@ export default {
     margin-bottom: 20px;
     text-align: center;
     .section_title {
-      color: var(--main_theme_clr);
+      color: black;
       font-size: 45px;
       font-weight: 600;
     }

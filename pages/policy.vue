@@ -64,7 +64,7 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings?key=policy`).then(response => {
+      return await this.$axios.get(`settings-general?key=policy`).then(response => {
         this.isLoading=true;
         this.terms_title = response.data.data[0].name;
         this.terms_content = response.data.data[0].value;
@@ -98,7 +98,7 @@ export default {
       margin-bottom: 20px;
       text-align: center;
       font-size: 35px;
-      color: var(--main_theme_clr);
+      color: black;
     }
   }
 
@@ -114,7 +114,7 @@ export default {
 
     .item_title {
       font-size: 22px;
-      color: var(--main_theme_clr);
+      color: black;
     }
     .item_content {
       font-size: 17px;

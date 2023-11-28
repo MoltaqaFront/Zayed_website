@@ -156,7 +156,7 @@ export default {
   // },
   router: {
     mode: 'history',
-    base: '/',
+    base: '/website',
     extendRoutes(routes) {
       routes.push({
         path: '*',
@@ -190,7 +190,7 @@ export default {
   build: {
     postcss: false,
     transpile: ['vee-validate/dist/rules'],
-    publicPath: "",
+    publicPath: "https://zaydapp.com/website",
   },
 
 
