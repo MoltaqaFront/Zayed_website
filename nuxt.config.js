@@ -59,7 +59,6 @@ export default {
     { src: '@/plugins/font-awesome.js' },
     // ****** END:: IMPORTING FONT AWESOME FILE ****** //
 
-
     { src: '@/plugins/sweetalert.js' },
 
     { src: '@/plugins/slick-carousel.js', ssr: false },
@@ -96,20 +95,21 @@ export default {
     [
       'nuxt-i18n',
       {
-        locales: [{
-          name: 'عربي ',
-          code: 'ar',
-          iso: 'ar-AR',
-          file: 'ar-AR.js',
-          dir: 'rtl',
-        },
-        {
-          name: 'English',
-          code: 'en',
-          iso: 'en-US',
-          file: 'en-US.js',
-          dir: 'ltr',
-        },
+        locales: [
+          {
+            name: 'عربي ',
+            code: 'ar',
+            iso: 'ar-AR',
+            file: 'ar-AR.js',
+            dir: 'rtl',
+          },
+          {
+            name: 'English',
+            code: 'en',
+            iso: 'en-US',
+            file: 'en-US.js',
+            dir: 'ltr',
+          },
         ],
         lazy: true,
         langDir: 'locales/',
@@ -138,7 +138,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'https://zaydapp.com/dashboard-api/v1/',
+    baseURL: 'https://backend.zaydapp.com/dashboard-api/v1/',
 
     headers: {
       common: {
@@ -156,16 +156,7 @@ export default {
   // },
   router: {
     mode: 'history',
-    base: '/website',
-    extendRoutes(routes) {
-      routes.push({
-        path: '*',
-        redirect: '/',
-      }, {
-        path: '/en',
-        redirect: '/',
-      })
-    },
+    base: '/',
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -190,13 +181,11 @@ export default {
   build: {
     postcss: false,
     transpile: ['vee-validate/dist/rules'],
-    publicPath: "https://zaydapp.com/website",
   },
 
-
-  // server: {
-  //   port: 5000,
-  // },
+  server: {
+    port: 5026,
+  },
   // env: {
   //   baseUrl: process.env.baseUrl || '',
   // },
