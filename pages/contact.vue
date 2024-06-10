@@ -34,17 +34,17 @@
                         </div>
                       </ValidationProvider>
 
-                      <ValidationProvider rules="required" :name="$t('contact.phone')" v-slot="{ errors }">
+                      <ValidationProvider rules="required" :name="$t('contact.mobile')" v-slot="{ errors }">
                         <div class="form-group">
-                          <input type="text" v-model="form.phone" :placeholder="$t('contact.phone')" />
+                          <input type="text" v-model="form.mobile" :placeholder="$t('contact.phone')" />
                           <span class="validation_message">{{ errors[0] }}</span>
                         </div>
 
                       </ValidationProvider>
 
-                      <ValidationProvider rules="required" :name="$t('contact.message')" v-slot="{ errors }">
+                      <ValidationProvider rules="required" :name="$t('contact.body')" v-slot="{ errors }">
                         <div class="form-group">
-                          <textarea v-model="form.message" :placeholder="$t('contact.message')"></textarea>
+                          <textarea v-model="form.body" :placeholder="$t('contact.message')"></textarea>
                           <span class="validation_message">{{ errors[0] }}</span>
                         </div>
                       </ValidationProvider>
@@ -101,10 +101,10 @@ export default {
       form: {
         name: "",
         email: "",
-        phone: "",
-        message: "",
-        message_title:"fdsadsf",
-        type: "contact"
+        mobile: "",
+        body: "",
+        // message_title:"fdsadsf",
+        type: "request"
       },
 
 
@@ -138,12 +138,11 @@ export default {
     async sendData() {
 
       try {
-        await this.$axios.$post('api/contactUs', this.form).then(response => {
+        await this.$axios.$post('contacts', this.form).then(response => {
           this.form.name = '';
           this.form.email = '';
-          this.form.phone = '';
-          this.form.message_title = '';
-          this.form.message = '';
+          this.form.mobile = '';
+          this.form.body = '';
 
           this.$refs.observer.reset();
 

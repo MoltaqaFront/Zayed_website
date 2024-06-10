@@ -65,10 +65,10 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings-general?key=terms`).then(response => {
+      return await this.$axios.get(`settings?key=terms`).then(response => {
         this.isLoading=true;
         this.terms_title = response.data.data[0].name;
-        this.terms_content = response.data.data[0].value;
+        this.terms_content = response.data.data[0].value.ar;
         // console.log(response.data.body.homepage.terms_and_conditions.title)
       }).catch(error => {
         console.log(error)

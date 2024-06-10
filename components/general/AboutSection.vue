@@ -43,8 +43,9 @@
           data-aos="fade"
           data-aos-delay="600"
           data-aos-duration="1000"
+
         >
-          {{ terms_title }}
+
         </h4>
         <h2
           class="section_title"
@@ -84,9 +85,9 @@ export default {
   methods:{
     async getData() {
     try {
-      return await this.$axios.get(`settings-general?key=about_us`).then(response => {
-        this.terms_title = response.data.data[0].name;
-        this.terms_content = response.data.data[0].value;
+      return await this.$axios.get(`settings?key=about_us`).then(response => {
+        // this.terms_title = response.data.data[0].name;
+        this.terms_content = response.data.data[0].value.ar;
       console.log(response.data)
         console.log()
       }).catch(error => {
